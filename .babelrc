@@ -4,7 +4,8 @@
     "react",
     "es2017",
     "es2016",
-    "es2017"
+    "es2017",
+    "jest"
   ],
   "plugins": [
     "transform-flow-comments",

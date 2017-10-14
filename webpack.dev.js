@@ -70,6 +70,15 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader?name=public/fonts/[name].[ext]'
+      },
+      {
+        test: /\.csv$/,
+        loader: 'csv-loader',
+        options: {
+          dynamicTyping: true,
+          header: true,
+          skipEmptyLines: true
+        }
       }
     ]
   },

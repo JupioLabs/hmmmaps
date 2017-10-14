@@ -16,10 +16,12 @@ import Header from './ui/Header.react';
 import Button from './ui/Button.react';
 import Advert from './ui/Advert.react';
 import Tag from './ui/Tag.react';
+import Map from './ui/Map.react';
 import SubscriptionInput from './ui/SubscriptionInput.react';
 
 export const App = ({ a, b }: { a: string, b: string }): React$Element<> => (
   <div styleName="app-style">
+    <Map />
     <NavigationBar />
     <Header
       heading="Hello World, This Is Dog"
@@ -84,4 +86,4 @@ export const App = ({ a, b }: { a: string, b: string }): React$Element<> => (
   </div>
 );
 
-export default CSSModules(App, styles);
+export default App;
