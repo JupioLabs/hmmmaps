@@ -24,7 +24,7 @@ class LeafletMap extends React.Component {
     this.leaflet = Leaflet;
     this.id = styles['map'];
     this.state = {
-      position: [43.683334, -79.76667],
+      position: [43.685885, -79.7602991],
       addresses: data
     };
   }
@@ -33,7 +33,7 @@ class LeafletMap extends React.Component {
     console.log(data);
     const { position } = this.state;
     const { leaflet, id } = this;
-    this.map = leaflet.map(id).setView(position, 20);
+    this.map = leaflet.map(id).setView(position, 18);
     Leaflet.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

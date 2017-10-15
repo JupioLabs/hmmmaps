@@ -8125,7 +8125,7 @@ class LeafletMap extends _react2.default.Component {
     this.leaflet = _leaflet2.default;
     this.id = _Map2.default['map'];
     this.state = {
-      position: [43.683334, -79.76667],
+      position: [43.685885, -79.7602991],
       addresses: _properties2.default
     };
   }
@@ -8134,7 +8134,7 @@ class LeafletMap extends _react2.default.Component {
     console.log(_properties2.default);
     const { position } = this.state;
     const { leaflet, id } = this;
-    this.map = leaflet.map(id).setView(position, 20);
+    this.map = leaflet.map(id).setView(position, 18);
     _leaflet2.default.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
