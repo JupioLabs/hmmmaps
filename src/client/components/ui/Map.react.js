@@ -2,7 +2,7 @@ import React from 'react';
 import CSSModules from 'react-css-modules';
 import Leaflet from 'leaflet';
 import styles from './Map.scss';
-import data from '../../../../property_data.csv';
+import data from '../../../properties.json';
 // import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 
 // const LeafletMap = () => {
@@ -24,7 +24,8 @@ class LeafletMap extends React.Component {
     this.leaflet = Leaflet;
     this.id = styles['map'];
     this.state = {
-      position: [43.683334, -79.76667]
+      position: [43.683334, -79.76667],
+      addresses: data
     };
   }
 
@@ -37,10 +38,22 @@ class LeafletMap extends React.Component {
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-    Leaflet.marker(position)
-      .addTo(this.map)
-      .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
-      .openPopup();
+    this.state.addresses.forEach(marker => {
+      const { coords, description } = marker;
+      console.log(coords, description);
+      const popUpContent = `
+        <p>Business Type: ${marker.businessType}</p>
+        <p>Address: ${marker.streetNumber} ${marker.streetName}</p>
+        <p>Year Purchased: ${marker.yearPurchased}</p>
+        <p>Owner: ${marker.businessOwner}</p>
+        <p>Description: ${marker.description}</p>
+      `;
+      Leaflet.marker(coords)
+        .addTo(this.map)
+        .bindPopup(popUpContent);
+    });
+    // Leaflet.marker(position).addTo(this.map);
+    // Leaflet.marker(this.state.addresses[3].coords).addTo(this.map);
   }
 
   render() {

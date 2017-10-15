@@ -1,11 +1,14 @@
 [ignore]
 .*/node_modules/fbjs/.*
 .*/node_modules/editions/.*
+.*/node_modules/radium/.*
+.*/node_modules/react-leaflet/.*
 /src/**/**/*.test.js
 /src/**/*.test.js
 /src/*.test.js
 node_modules/react-leaflet/**/*.flow
 node_modules/react-leaflet/**/**/*.flow
+node_modules/radium/**/
 
 [include]
 /src/*.js

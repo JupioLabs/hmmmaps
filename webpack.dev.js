@@ -79,6 +79,10 @@ module.exports = {
           header: true,
           skipEmptyLines: true
         }
+      },
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
       }
     ]
   },
